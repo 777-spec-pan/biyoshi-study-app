@@ -1,4 +1,4 @@
-const CACHE_NAME = "biyoshi-master-165-v1";
+const CACHE_NAME = "biyoshi-master-330-review-v1";
 const ASSETS = [
   "./",
   "./index.html",
@@ -12,7 +12,9 @@ const ASSETS = [
   "./data/53.json",
   "./data/52.json",
   "./data/51.json",
-  "./data/50.json"
+  "./data/50.json",
+  "./data/49.json",
+  "./data/48.json"
 ];
 
 self.addEventListener("install", event => {
@@ -30,7 +32,6 @@ self.addEventListener("activate", event => {
 
 self.addEventListener("fetch", event => {
   if (event.request.method !== "GET") return;
-
   event.respondWith(
     fetch(event.request)
       .then(response => {

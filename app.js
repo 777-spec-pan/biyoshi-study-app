@@ -338,15 +338,35 @@ function renderQuestion() {
 
 function answerQuestion(selected) {
   if (answered) return;
-  answered = true;
 
   const question = currentQuestions[currentIndex];
-  const correct = selected === question.answer;
+
+  if (question.reviewOnly) {
+    answered = true;
+    const buttons = [...document.querySelectorAll(".choice-btn")];
+    buttons.forEach(button => button.disabled = true);
+    const result = document.getElementById("resultBox");
+    result.className = "result-box";
+    result.innerHTML = `
+      <div class="answer-status"><strong>📄 原本画像確認問題</strong></div>
+      <div class="explanation-box">
+        <span>確認事項</span>
+        <p>${escapeHtml(question.explanation || "原本画像を確認してください。")}</p>
+      </div>`;
+    document.getElementById("nextButton").classList.remove("hidden");
+    return;
+  }
+
+  answered = true;
+  const acceptedAnswers = Array.isArray(question.acceptedAnswers)
+    ? question.acceptedAnswers
+    : [question.answer];
+  const correct = acceptedAnswers.includes(selected);
   const buttons = [...document.querySelectorAll(".choice-btn")];
 
   buttons.forEach((button, index) => {
     button.disabled = true;
-    if (index === question.answer) button.classList.add("correct");
+    if (acceptedAnswers.includes(index)) button.classList.add("correct");
     if (index === selected && !correct) button.classList.add("wrong");
   });
 
@@ -374,7 +394,9 @@ function answerQuestion(selected) {
 
   const result = document.getElementById("resultBox");
   result.className = `result-box ${correct ? "correct" : "wrong"}`;
-  const correctChoice = `${question.answer + 1}. ${(question.choices || [])[question.answer] || ""}`;
+  const correctChoice = acceptedAnswers
+    .map(index => `${index + 1}. ${(question.choices || [])[index] || ""}`)
+    .join(" / ");
   result.innerHTML = `
     <div class="answer-status">
       <strong>${correct ? "⭕ 正解です" : "❌ 不正解です"}</strong>

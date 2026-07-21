@@ -22,7 +22,8 @@
       "explanation": "正解は選択肢4です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "美容師法・運営管理の基本事項を確認する。",
       "memory": "正解は4番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-002",
@@ -43,7 +44,8 @@
       "explanation": "正解は選択肢3です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "美容師法・運営管理の基本事項を確認する。",
       "memory": "正解は3番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-003",
@@ -64,7 +66,8 @@
       "explanation": "正解は選択肢3です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "管理美容師の基本事項を確認する。",
       "memory": "正解は3番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-004",
@@ -86,7 +89,8 @@
       "point": "美容師法・運営管理の基本事項を確認する。",
       "memory": "正解は1番",
       "needsReview": true,
-      "image": "images/51-page-04.jpg"
+      "image": "images/51-page-04.jpg",
+      "year": 51
     },
     {
       "id": "official-051-005",
@@ -107,7 +111,8 @@
       "explanation": "正解は選択肢3です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "美容師法・運営管理の基本事項を確認する。",
       "memory": "正解は3番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-006",
@@ -128,7 +133,8 @@
       "explanation": "正解は選択肢1です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "美容師法・運営管理の基本事項を確認する。",
       "memory": "正解は1番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-007",
@@ -149,7 +155,8 @@
       "explanation": "正解は選択肢2です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "美容師法・運営管理の基本事項を確認する。",
       "memory": "正解は2番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-008",
@@ -170,7 +177,8 @@
       "explanation": "正解は選択肢3です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "税務の基本事項を確認する。",
       "memory": "正解は3番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-009",
@@ -192,7 +200,8 @@
       "point": "社会保険の基本事項を確認する。",
       "memory": "正解は1番",
       "needsReview": true,
-      "image": "images/51-page-06.jpg"
+      "image": "images/51-page-06.jpg",
+      "year": 51
     },
     {
       "id": "official-051-010",
@@ -214,7 +223,8 @@
       "point": "社会保険の基本事項を確認する。",
       "memory": "正解は1番",
       "needsReview": true,
-      "image": "images/51-page-06.jpg"
+      "image": "images/51-page-06.jpg",
+      "year": 51
     },
     {
       "id": "official-051-011",
@@ -235,7 +245,8 @@
       "explanation": "正解は選択肢1です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "公衆衛生・感染症・消毒の基本事項を確認する。",
       "memory": "正解は1番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-012",
@@ -256,7 +267,8 @@
       "explanation": "正解は選択肢2です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "公衆衛生・感染症・消毒の基本事項を確認する。",
       "memory": "正解は2番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-013",
@@ -277,7 +289,8 @@
       "explanation": "正解は選択肢4です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "公衆衛生・感染症・消毒の基本事項を確認する。",
       "memory": "正解は4番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-014",
@@ -298,7 +311,8 @@
       "explanation": "正解は選択肢3です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "公衆衛生・感染症・消毒の基本事項を確認する。",
       "memory": "正解は3番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-015",
@@ -320,7 +334,8 @@
       "explanation": "正解は選択肢4です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "正答と関連用語を確認する。",
       "memory": "正解は4番",
-      "image": "images/51-page-08.jpg"
+      "image": "images/51-page-08.jpg",
+      "year": 51
     },
     {
       "id": "official-051-016",
@@ -342,7 +357,8 @@
       "point": "公衆衛生・感染症・消毒の基本事項を確認する。",
       "memory": "正解は1番",
       "needsReview": true,
-      "image": "images/51-page-09.jpg"
+      "image": "images/51-page-09.jpg",
+      "year": 51
     },
     {
       "id": "official-051-017",
@@ -364,7 +380,8 @@
       "point": "公衆衛生・感染症・消毒の基本事項を確認する。",
       "memory": "正解は1番",
       "needsReview": true,
-      "image": "images/51-page-09.jpg"
+      "image": "images/51-page-09.jpg",
+      "year": 51
     },
     {
       "id": "official-051-018",
@@ -386,7 +403,8 @@
       "point": "感染症の基本事項を確認する。",
       "memory": "正解は1番",
       "needsReview": true,
-      "image": "images/51-page-10.jpg"
+      "image": "images/51-page-10.jpg",
+      "year": 51
     },
     {
       "id": "official-051-019",
@@ -408,7 +426,8 @@
       "point": "感染症の基本事項を確認する。",
       "memory": "正解は1番",
       "needsReview": true,
-      "image": "images/51-page-10.jpg"
+      "image": "images/51-page-10.jpg",
+      "year": 51
     },
     {
       "id": "official-051-020",
@@ -430,7 +449,8 @@
       "explanation": "正解は選択肢1です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "正答と関連用語を確認する。",
       "memory": "正解は1番",
-      "image": "images/51-page-10.jpg"
+      "image": "images/51-page-10.jpg",
+      "year": 51
     },
     {
       "id": "official-051-021",
@@ -452,7 +472,8 @@
       "point": "消毒法の基本事項を確認する。",
       "memory": "正解は1番",
       "needsReview": true,
-      "image": "images/51-page-11.jpg"
+      "image": "images/51-page-11.jpg",
+      "year": 51
     },
     {
       "id": "official-051-022",
@@ -473,7 +494,8 @@
       "explanation": "正解は選択肢1です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "消毒法の基本事項を確認する。",
       "memory": "正解は1番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-023",
@@ -494,7 +516,8 @@
       "explanation": "正解は選択肢2です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "消毒法の基本事項を確認する。",
       "memory": "正解は2番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-024",
@@ -516,7 +539,8 @@
       "point": "消毒法の基本事項を確認する。",
       "memory": "正解は1番",
       "needsReview": true,
-      "image": "images/51-page-12.jpg"
+      "image": "images/51-page-12.jpg",
+      "year": 51
     },
     {
       "id": "official-051-025",
@@ -538,7 +562,8 @@
       "point": "公衆衛生・感染症・消毒の基本事項を確認する。",
       "memory": "正解は1番",
       "needsReview": true,
-      "image": "images/51-page-12.jpg"
+      "image": "images/51-page-12.jpg",
+      "year": 51
     },
     {
       "id": "official-051-026",
@@ -559,7 +584,8 @@
       "explanation": "正解は選択肢2です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "人体・皮膚・毛髪の基本事項を確認する。",
       "memory": "正解は2番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-027",
@@ -581,7 +607,8 @@
       "point": "人体・皮膚・毛髪の基本事項を確認する。",
       "memory": "正解は1番",
       "needsReview": true,
-      "image": "images/51-page-13.jpg"
+      "image": "images/51-page-13.jpg",
+      "year": 51
     },
     {
       "id": "official-051-028",
@@ -602,7 +629,8 @@
       "explanation": "正解は選択肢3です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "人体・皮膚・毛髪の基本事項を確認する。",
       "memory": "正解は3番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-029",
@@ -624,7 +652,8 @@
       "explanation": "正解は選択肢2です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "正答と関連用語を確認する。",
       "memory": "正解は2番",
-      "image": "images/51-page-14.jpg"
+      "image": "images/51-page-14.jpg",
+      "year": 51
     },
     {
       "id": "official-051-030",
@@ -646,7 +675,8 @@
       "point": "人体・皮膚・毛髪の基本事項を確認する。",
       "memory": "正解は1番",
       "needsReview": true,
-      "image": "images/51-page-14.jpg"
+      "image": "images/51-page-14.jpg",
+      "year": 51
     },
     {
       "id": "official-051-031",
@@ -667,7 +697,8 @@
       "explanation": "正解は選択肢1です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "皮膚科学の基本事項を確認する。",
       "memory": "正解は1番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-032",
@@ -688,7 +719,8 @@
       "explanation": "正解は選択肢1です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "皮膚科学の基本事項を確認する。",
       "memory": "正解は1番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-033",
@@ -710,7 +742,8 @@
       "point": "皮膚科学の基本事項を確認する。",
       "memory": "正解は1番",
       "needsReview": true,
-      "image": "images/51-page-15.jpg"
+      "image": "images/51-page-15.jpg",
+      "year": 51
     },
     {
       "id": "official-051-034",
@@ -731,7 +764,8 @@
       "explanation": "正解は選択肢4です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "皮膚科学の基本事項を確認する。",
       "memory": "正解は4番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-035",
@@ -753,7 +787,8 @@
       "point": "皮膚科学の基本事項を確認する。",
       "memory": "正解は1番",
       "needsReview": true,
-      "image": "images/51-page-16.jpg"
+      "image": "images/51-page-16.jpg",
+      "year": 51
     },
     {
       "id": "official-051-036",
@@ -774,7 +809,8 @@
       "explanation": "正解は選択肢3です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "香粧品・化学の基本事項を確認する。",
       "memory": "正解は3番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-037",
@@ -795,7 +831,8 @@
       "explanation": "正解は選択肢1です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "香粧品・化学の基本事項を確認する。",
       "memory": "正解は1番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-038",
@@ -816,7 +853,8 @@
       "explanation": "正解は選択肢3です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "香粧品・化学の基本事項を確認する。",
       "memory": "正解は1番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-039",
@@ -838,7 +876,8 @@
       "explanation": "正解は選択肢2です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "正答と関連用語を確認する。",
       "memory": "正解は2番",
-      "image": "images/51-page-18.jpg"
+      "image": "images/51-page-18.jpg",
+      "year": 51
     },
     {
       "id": "official-051-040",
@@ -859,7 +898,8 @@
       "explanation": "正解は選択肢2です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "香粧品・化学の基本事項を確認する。",
       "memory": "正解は2番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-041",
@@ -880,7 +920,8 @@
       "explanation": "正解は選択肢2です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "美容文化・服飾の基本事項を確認する。",
       "memory": "正解は2番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-042",
@@ -901,7 +942,8 @@
       "explanation": "正解は選択肢4です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "美容文化・服飾の基本事項を確認する。",
       "memory": "正解は4番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-043",
@@ -922,7 +964,8 @@
       "explanation": "正解は選択肢1です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "美容文化・服飾の基本事項を確認する。",
       "memory": "正解は1番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-044",
@@ -944,7 +987,8 @@
       "point": "美容技術の基本事項を確認する。",
       "memory": "正解は4番",
       "needsReview": false,
-      "image": "images/51-page-21.jpg"
+      "image": "images/51-page-21.jpg",
+      "year": 51
     },
     {
       "id": "official-051-045",
@@ -966,7 +1010,8 @@
       "explanation": "正解は選択肢3です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "正答と関連用語を確認する。",
       "memory": "正解は3番",
-      "image": "images/51-page-22.jpg"
+      "image": "images/51-page-22.jpg",
+      "year": 51
     },
     {
       "id": "official-051-046",
@@ -988,7 +1033,8 @@
       "explanation": "正解は選択肢1です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "正答と関連用語を確認する。",
       "memory": "正解は1番",
-      "image": "images/51-page-22.jpg"
+      "image": "images/51-page-22.jpg",
+      "year": 51
     },
     {
       "id": "official-051-047",
@@ -1009,7 +1055,8 @@
       "explanation": "正解は選択肢3です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "毛髪科学の基本事項を確認する。",
       "memory": "正解は1番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-048",
@@ -1031,7 +1078,8 @@
       "point": "カット技術の基本事項を確認する。",
       "memory": "正解は1番",
       "needsReview": true,
-      "image": "images/51-page-23.jpg"
+      "image": "images/51-page-23.jpg",
+      "year": 51
     },
     {
       "id": "official-051-049",
@@ -1052,7 +1100,8 @@
       "explanation": "正解は選択肢1です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "毛髪科学の基本事項を確認する。",
       "memory": "正解は1番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     },
     {
       "id": "official-051-050",
@@ -1074,7 +1123,8 @@
       "point": "毛髪科学の基本事項を確認する。",
       "memory": "正解は1番",
       "needsReview": false,
-      "image": "images/51-page-23.jpg"
+      "image": "images/51-page-23.jpg",
+      "year": 51
     },
     {
       "id": "official-051-051",
@@ -1096,7 +1146,8 @@
       "explanation": "正解は選択肢2です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "正答と関連用語を確認する。",
       "memory": "正解は2番",
-      "image": "images/51-page-24.jpg"
+      "image": "images/51-page-24.jpg",
+      "year": 51
     },
     {
       "id": "official-051-052",
@@ -1118,7 +1169,8 @@
       "explanation": "正解は選択肢1です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "正答と関連用語を確認する。",
       "memory": "正解は1番",
-      "image": "images/51-page-24.jpg"
+      "image": "images/51-page-24.jpg",
+      "year": 51
     },
     {
       "id": "official-051-053",
@@ -1140,7 +1192,8 @@
       "point": "カット技術の基本事項を確認する。",
       "memory": "正解は1番",
       "needsReview": false,
-      "image": "images/51-page-25.jpg"
+      "image": "images/51-page-25.jpg",
+      "year": 51
     },
     {
       "id": "official-051-054",
@@ -1162,7 +1215,8 @@
       "explanation": "正解は選択肢1です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "正答と関連用語を確認する。",
       "memory": "正解は1番",
-      "image": "images/51-page-25.jpg"
+      "image": "images/51-page-25.jpg",
+      "year": 51
     },
     {
       "id": "official-051-055",
@@ -1183,9 +1237,11 @@
       "explanation": "正解は選択肢4です。原本の赤丸で示された正答に基づいています。問題文画像も確認しながら学習してください。",
       "point": "着付けの基本事項を確認する。",
       "memory": "正解は4番",
-      "needsReview": false
+      "needsReview": false,
+      "year": 51
     }
   ],
   "explanationVersion": "source-checked-answer-key-1",
-  "explanationNote": "正答は原本の赤丸を確認済み。OCR文字は確認版で、原本画像付き問題は画像を優先してください。"
+  "explanationNote": "正答は原本の赤丸を確認済み。OCR文字は確認版で、原本画像付き問題は画像を優先してください。",
+  "reviewNote": "第48～50回はOCR確認用に原本ページ画像を併記しています。"
 }
