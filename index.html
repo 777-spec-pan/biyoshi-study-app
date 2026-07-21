@@ -23,7 +23,7 @@
     </div>
     <div class="top-actions">
       <button id="themeButton" class="icon-button" onclick="toggleTheme()" aria-label="テーマ変更">🌙</button>
-      <span id="versionBadge" class="version">V3.0</span>
+      <span id="versionBadge" class="version">V3.1</span>
     </div>
   </header>
 
@@ -81,8 +81,8 @@
       </div>
 
       <section class="notice">
-        <strong>V3.0</strong>
-        <p>ホーム画面、学習分析、7日間記録、苦手分野表示、ダークモードを追加しました。</p>
+        <strong>V3.1</strong>
+        <p>公式過去問リンクを修正し、公式一覧ページから開く方式に変更しました。</p>
       </section>
       <button class="text-button danger-text" onclick="resetLearningData()">学習データをリセット</button>
     </section>
@@ -94,12 +94,30 @@
     </section>
 
     <section id="officialScreen" class="hidden">
-      <div class="screen-heading"><button class="back-btn" onclick="goHome()">← 戻る</button><h2>公式過去問PDF</h2></div>
-      <div class="official-list">
-        <a class="official-card" href="https://www.rbc.or.jp/wp-content/uploads/2026/03/53bhikki-1.pdf" target="_blank" rel="noopener"><div><strong>第53回</strong><small>美容師筆記試験</small></div><span>開く ↗</span></a>
-        <a class="official-card" href="https://www.rbc.or.jp/wp-content/uploads/2025/09/52bhikki.pdf" target="_blank" rel="noopener"><div><strong>第52回</strong><small>美容師筆記試験</small></div><span>開く ↗</span></a>
-        <a class="official-card" href="https://www.rbc.or.jp/wp-content/uploads/2025/03/51bhikki.pdf" target="_blank" rel="noopener"><div><strong>第51回</strong><small>美容師筆記試験</small></div><span>開く ↗</span></a>
-        <a class="official-card" href="https://www.rbc.or.jp/wp-content/uploads/2024/09/50bhikki.pdf" target="_blank" rel="noopener"><div><strong>第50回</strong><small>美容師筆記試験</small></div><span>開く ↗</span></a>
+      <div class="screen-heading">
+        <button class="back-btn" onclick="goHome()">← 戻る</button>
+        <h2>公式過去問</h2>
+      </div>
+
+      <article class="official-guide">
+        <span class="official-guide-icon">📄</span>
+        <h3>公式サイトから開きます</h3>
+        <p>
+          理容師美容師試験研修センターの
+          「過去の筆記試験問題」一覧ページから、
+          第53回、第52回、第51回などを選択してください。
+        </p>
+        <a class="official-main-button"
+           href="https://www.rbc.or.jp/exam/past_question/"
+           target="_blank"
+           rel="noopener noreferrer">
+          公式過去問一覧を開く ↗
+        </a>
+      </article>
+
+      <div class="official-note">
+        <strong>開けない場合</strong>
+        <p>ボタンを長押しして「新しいタブで開く」を選んでください。</p>
       </div>
     </section>
 

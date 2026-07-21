@@ -31,3 +31,33 @@ h2{font-size:18px;margin:22px 0 11px}.menu-grid{display:grid;grid-template-colum
 .text-button{display:block;margin:18px auto;border:0;background:transparent;text-decoration:underline}.danger-text{color:#aa3b49}
 .update-banner{position:fixed;bottom:12px;left:12px;right:12px;z-index:99;background:#30232b;color:#fff;border-radius:14px;padding:12px;display:flex;justify-content:space-between;align-items:center}.update-banner button{border:0;border-radius:9px;padding:8px 11px}
 @media(max-width:430px){.dashboard-grid{grid-template-columns:repeat(2,1fr)}.analysis-row{grid-template-columns:105px 1fr 38px}.topbar h1{font-size:18px}}
+
+.official-guide{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:24px 18px;
+  text-align:center;
+  box-shadow:0 8px 28px #46283914;
+}
+.official-guide-icon{font-size:48px;display:block;margin-bottom:8px}
+.official-guide h3{margin:8px 0;font-size:20px}
+.official-guide p{color:var(--muted);line-height:1.8;margin:10px 0 18px}
+.official-main-button{
+  display:block;
+  width:100%;
+  padding:15px;
+  border-radius:14px;
+  background:var(--accent);
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+}
+.official-note{
+  margin-top:14px;
+  padding:14px;
+  border-radius:14px;
+  background:var(--soft);
+  border:1px solid var(--line);
+}
+.official-note p{margin:5px 0 0;color:var(--muted);font-size:13px;line-height:1.6}
