@@ -310,6 +310,16 @@ function renderQuestion() {
   document.getElementById("questionNumber").textContent =
     `第${question.exam || "-"}回　問${question.number || currentIndex + 1}`;
   document.getElementById("questionText").textContent = question.question;
+  const oldImage = document.getElementById("questionImage");
+  if (oldImage) oldImage.remove();
+  if (question.image) {
+    const img = document.createElement("img");
+    img.id = "questionImage";
+    img.className = "question-image";
+    img.src = question.image;
+    img.alt = `第${question.exam}回 問${question.number}の問題画像`;
+    document.getElementById("questionText").insertAdjacentElement("afterend", img);
+  }
   document.getElementById("resultBox").className = "result-box hidden";
   document.getElementById("nextButton").className = "primary-btn hidden";
 

@@ -1,4 +1,4 @@
-const EXAM_DATA_FILES = ["53", "52", "51", "50"];
+const EXAM_DATA_FILES = ["53", "52", "51"];
 let QUESTIONS = [];
 let EXAM_DATABASE = [];
 
