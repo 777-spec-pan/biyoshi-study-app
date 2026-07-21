@@ -1,6 +1,9 @@
 const QUESTIONS = [
   {
-    id: "demo-001",
+    id: "demo-053-001",
+    exam: 53,
+    number: 1,
+    sourceType: "original",
     category: "関係法規・制度",
     question: "美容師が美容の業を行うために必要なものとして、最も適切なのはどれか。",
     choices: ["美容師免許", "調理師免許", "販売士資格", "危険物取扱者免状"],
@@ -8,7 +11,10 @@ const QUESTIONS = [
     explanation: "美容の業を行うには、美容師法に基づく美容師免許が必要です。"
   },
   {
-    id: "demo-002",
+    id: "demo-053-002",
+    exam: 53,
+    number: 2,
+    sourceType: "original",
     category: "衛生管理",
     question: "手指の衛生管理として適切なのはどれか。",
     choices: ["目に見える汚れがあっても消毒だけで済ませる", "流水と石けんで洗浄した後、必要に応じて消毒する", "タオルを複数人で共用する", "手袋をすれば手洗いは不要である"],
@@ -16,7 +22,10 @@ const QUESTIONS = [
     explanation: "汚れがある場合は、まず流水と石けんで洗浄し、その後に必要な消毒を行います。"
   },
   {
-    id: "demo-003",
+    id: "demo-053-003",
+    exam: 53,
+    number: 3,
+    sourceType: "original",
     category: "保健",
     question: "皮膚の最も外側にある層はどれか。",
     choices: ["表皮", "真皮", "皮下組織", "筋膜"],
@@ -24,7 +33,10 @@ const QUESTIONS = [
     explanation: "皮膚は外側から表皮、真皮、皮下組織に大別されます。"
   },
   {
-    id: "demo-004",
+    id: "demo-053-004",
+    exam: 53,
+    number: 4,
+    sourceType: "original",
     category: "香粧品化学",
     question: "シャンプー剤の主な目的として適切なのはどれか。",
     choices: ["毛髪や頭皮の汚れを落とす", "毛髪を永久に着色する", "毛髪を切断する", "爪を硬化させる"],
@@ -32,7 +44,10 @@ const QUESTIONS = [
     explanation: "シャンプー剤は、界面活性剤などの働きで毛髪や頭皮の汚れを除去します。"
   },
   {
-    id: "demo-005",
+    id: "demo-053-005",
+    exam: 53,
+    number: 5,
+    sourceType: "original",
     category: "文化論",
     question: "流行する髪型や服装を理解する際に重要な視点はどれか。",
     choices: ["時代や社会背景", "消毒薬の濃度だけ", "店舗の水道圧だけ", "道具の購入価格だけ"],
@@ -40,7 +55,10 @@ const QUESTIONS = [
     explanation: "美容文化は、その時代の社会・生活・価値観などと関係して変化します。"
   },
   {
-    id: "demo-006",
+    id: "demo-053-006",
+    exam: 53,
+    number: 6,
+    sourceType: "original",
     category: "美容技術理論",
     question: "ヘアカッティングで、毛髪を引き出す角度により変化しやすいものはどれか。",
     choices: ["仕上がりの段差や重さ", "毛髪の本数", "頭皮の色", "爪の長さ"],
@@ -48,7 +66,10 @@ const QUESTIONS = [
     explanation: "毛髪を引き出す角度は、レイヤーやグラデーションなど、仕上がりの重さと段差に影響します。"
   },
   {
-    id: "demo-007",
+    id: "demo-053-007",
+    exam: 53,
+    number: 7,
+    sourceType: "original",
     category: "運営管理",
     question: "美容所の経営で、売上から費用を差し引いたものは何か。",
     choices: ["利益", "在庫", "客数", "予約数"],
@@ -56,7 +77,10 @@ const QUESTIONS = [
     explanation: "基本的には、売上から必要な費用を差し引いた残りが利益です。"
   },
   {
-    id: "demo-008",
+    id: "demo-053-008",
+    exam: 53,
+    number: 8,
+    sourceType: "original",
     category: "衛生管理",
     question: "器具の消毒前に行うこととして適切なのはどれか。",
     choices: ["付着した毛髪や汚れを除去する", "汚れたまま保管する", "他の器具と混ぜる", "乾燥だけで終える"],
@@ -64,7 +88,10 @@ const QUESTIONS = [
     explanation: "消毒効果を十分に得るため、器具に付着した有機物や汚れを先に除去します。"
   },
   {
-    id: "demo-009",
+    id: "demo-053-009",
+    exam: 53,
+    number: 9,
+    sourceType: "original",
     category: "保健",
     question: "毛髪がつくられる場所として最も適切なのはどれか。",
     choices: ["毛球部", "毛幹の先端", "汗腺", "皮脂腺の開口部"],
@@ -72,7 +99,10 @@ const QUESTIONS = [
     explanation: "毛球部の毛母細胞が分裂・増殖することで毛髪が形成されます。"
   },
   {
-    id: "demo-010",
+    id: "demo-053-010",
+    exam: 53,
+    number: 10,
+    sourceType: "original",
     category: "美容技術理論",
     question: "パーマネントウェーブの施術で、ロッドの太さが主に影響するものはどれか。",
     choices: ["ウェーブの大きさ", "毛髪の色", "頭皮の厚さ", "爪の形"],

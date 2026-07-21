@@ -23,11 +23,10 @@
       <div class="hero-card">
         <p>毎日少しずつ、合格へ。</p>
         <div class="stats-grid">
-          <div><strong id="totalAnswered">0</strong><span>回答数</span></div>
+          <div><strong id="todayAnswered">0</strong><span>今日の回答</span></div>
           <div><strong id="accuracy">0%</strong><span>正答率</span></div>
-          <div><strong id="wrongCount">0</strong><span>復習問題</span></div>
-        </div>
-      </div>
+          <div><strong id="streakDays">0日</strong><span>連続学習</span></div>
+        </div><div class="sub-stats"><span>累計 <strong id="totalAnswered">0</strong>問</span><span>復習 <strong id="wrongCount">0</strong>問</span></div></div>
 
       <h2>学習メニュー</h2>
       <div class="menu-grid">
@@ -41,6 +40,11 @@
           <strong>分野別学習</strong>
           <small>苦手分野を集中</small>
         </button>
+        <button class="menu-card" onclick="showExams()">
+          <span class="menu-icon">📖</span>
+          <strong>年度別学習</strong>
+          <small>試験回を選んで学習</small>
+        </button>
         <button class="menu-card" onclick="startQuiz('wrong')">
           <span class="menu-icon">🔁</span>
           <strong>間違い復習</strong>
@@ -49,14 +53,22 @@
         <button class="menu-card" onclick="startMockExam()">
           <span class="menu-icon">📝</span>
           <strong>模擬試験</strong>
-          <small>V1は10問体験版</small>
+          <small>収録問題から最大55問</small>
         </button>
       </div>
 
       <section class="notice">
-        <strong>V1について</strong>
-        <p>現在は動作確認用のオリジナル問題を収録しています。公式過去問の利用条件を確認後、問題数を増やします。</p>
+        <strong>V1.1について</strong>
+        <p>年度別学習に対応しました。現在は動作確認用のオリジナル問題10問を収録しています。</p>
       </section>
+    </section>
+
+    <section id="examScreen" class="hidden">
+      <div class="screen-heading">
+        <button class="back-btn" onclick="goHome()">← 戻る</button>
+        <h2>試験回を選ぶ</h2>
+      </div>
+      <div id="examList" class="category-list"></div>
     </section>
 
     <section id="categoryScreen" class="hidden">

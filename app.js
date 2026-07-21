@@ -7,7 +7,10 @@ let answered = false;
 const STORAGE_KEY = "biyoshiMasterStatsV1";
 
 function getStats() {
-  return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{"answered":0,"correct":0,"wrongIds":[]}');
+  const s = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{"answered":0,"correct":0,"wrongIds":[],"daily":{},"studyDates":[]}');
+  s.daily = s.daily || {};
+  s.studyDates = s.studyDates || [];
+  return s;
 }
 function saveStats(stats) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(stats));
@@ -16,19 +19,42 @@ function shuffle(array) {
   return [...array].sort(() => Math.random() - 0.5);
 }
 function showOnly(id) {
-  ["homeScreen","categoryScreen","quizScreen","resultScreen"].forEach(x => {
+  ["homeScreen","examScreen","categoryScreen","quizScreen","resultScreen"].forEach(x => {
     document.getElementById(x).classList.toggle("hidden", x !== id);
   });
 }
+function dateKey(d = new Date()) { return d.toISOString().slice(0,10); }
+function calcStreak(dates) {
+  const set = new Set(dates || []);
+  let d = new Date(), n = 0;
+  if (!set.has(dateKey(d))) d.setDate(d.getDate()-1);
+  while (set.has(dateKey(d))) { n++; d.setDate(d.getDate()-1); }
+  return n;
+}
 function updateHomeStats() {
-  const s = getStats();
+  const s = getStats(), today = dateKey();
+  document.getElementById("todayAnswered").textContent = s.daily[today] || 0;
   document.getElementById("totalAnswered").textContent = s.answered;
   document.getElementById("accuracy").textContent = s.answered ? Math.round(s.correct / s.answered * 100) + "%" : "0%";
   document.getElementById("wrongCount").textContent = s.wrongIds.length;
+  document.getElementById("streakDays").textContent = calcStreak(s.studyDates) + "日";
 }
 function goHome() {
   showOnly("homeScreen");
   updateHomeStats();
+}
+function showExams() {
+  const list = document.getElementById("examList");
+  list.innerHTML = "";
+  [...new Set(QUESTIONS.map(q => q.exam))].sort((a,b)=>b-a).forEach(exam => {
+    const btn = document.createElement("button");
+    const count = QUESTIONS.filter(q => q.exam === exam).length;
+    btn.className = "category-button";
+    btn.textContent = `第${exam}回（${count}問）`;
+    btn.onclick = () => startQuiz("exam", exam);
+    list.appendChild(btn);
+  });
+  showOnly("examScreen");
 }
 function showCategories() {
   const list = document.getElementById("categoryList");
@@ -55,10 +81,12 @@ function startQuiz(mode, category = null) {
     }
   } else if (mode === "category") {
     pool = QUESTIONS.filter(q => q.category === category);
+  } else if (mode === "exam") {
+    pool = QUESTIONS.filter(q => q.exam === category);
   } else {
     pool = QUESTIONS;
   }
-  currentQuestions = shuffle(pool).slice(0, APP_CONFIG.randomQuestionCount);
+  currentQuestions = shuffle(pool).slice(0, mode === "exam" ? pool.length : APP_CONFIG.randomQuestionCount);
   currentIndex = 0;
   currentScore = 0;
   showOnly("quizScreen");
@@ -66,7 +94,7 @@ function startQuiz(mode, category = null) {
 }
 function startMockExam() {
   currentMode = "mock";
-  currentQuestions = shuffle(QUESTIONS).slice(0, APP_CONFIG.mockQuestionCount);
+  currentQuestions = shuffle(QUESTIONS).slice(0, Math.min(APP_CONFIG.mockQuestionCount, QUESTIONS.length));
   currentIndex = 0;
   currentScore = 0;
   showOnly("quizScreen");
@@ -105,6 +133,9 @@ function answerQuestion(selected) {
 
   const s = getStats();
   s.answered += 1;
+  const today = dateKey();
+  s.daily[today] = (s.daily[today] || 0) + 1;
+  if (!s.studyDates.includes(today)) s.studyDates.push(today);
   if (correct) {
     currentScore += 1;
     s.correct += 1;
