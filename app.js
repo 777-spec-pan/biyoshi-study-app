@@ -364,9 +364,19 @@ function answerQuestion(selected) {
 
   const result = document.getElementById("resultBox");
   result.className = `result-box ${correct ? "correct" : "wrong"}`;
+  const correctChoice = `${question.answer + 1}. ${(question.choices || [])[question.answer] || ""}`;
   result.innerHTML = `
-    <strong>${correct ? "正解です" : "不正解です"}</strong><br>
-    ${escapeHtml(question.explanation || "解説は準備中です。")}`;
+    <div class="answer-status">
+      <strong>${correct ? "⭕ 正解です" : "❌ 不正解です"}</strong>
+    </div>
+    <div class="correct-answer-box">
+      <span>正解</span>
+      <b>${escapeHtml(correctChoice)}</b>
+    </div>
+    <div class="explanation-box">
+      <span>ポイント解説</span>
+      <p>${escapeHtml(question.explanation || "解説は準備中です。")}</p>
+    </div>`;
 
   document.getElementById("nextButton").classList.remove("hidden");
 }
