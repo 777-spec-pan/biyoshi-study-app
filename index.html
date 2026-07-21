@@ -10,23 +10,42 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="updateBanner" class="update-banner hidden">
+    <span>新しいバージョンがあります</span>
+    <button onclick="applyUpdate()">更新する</button>
+  </div>
+
   <header class="app-header">
     <div>
       <p class="eyebrow">美容師国家試験対策</p>
       <h1 id="appTitle">美容師国家試験 MASTER</h1>
     </div>
-    <span id="versionBadge" class="version">V1.0</span>
+    <span id="versionBadge" class="version">V2.1</span>
   </header>
 
   <main class="container">
     <section id="homeScreen">
       <div class="hero-card">
-        <p>毎日少しずつ、合格へ。</p>
+        <div class="hero-line">
+          <div>
+            <p class="hero-copy">毎日少しずつ、合格へ。</p>
+            <small id="questionCountText">収録問題を読み込み中…</small>
+          </div>
+          <button class="mini-btn" onclick="checkForUpdate()">更新確認</button>
+        </div>
+
         <div class="stats-grid">
           <div><strong id="todayAnswered">0</strong><span>今日の回答</span></div>
           <div><strong id="accuracy">0%</strong><span>正答率</span></div>
           <div><strong id="streakDays">0日</strong><span>連続学習</span></div>
-        </div><div class="sub-stats"><span>累計 <strong id="totalAnswered">0</strong>問</span><span>復習 <strong id="wrongCount">0</strong>問</span></div></div>
+        </div>
+
+        <div class="sub-stats">
+          <span>累計 <strong id="totalAnswered">0</strong>問</span>
+          <span>復習 <strong id="wrongCount">0</strong>問</span>
+          <span>お気に入り <strong id="favoriteCount">0</strong>問</span>
+        </div>
+      </div>
 
       <h2>学習メニュー</h2>
       <div class="menu-grid">
@@ -50,79 +69,88 @@
           <strong>間違い復習</strong>
           <small>間違えた問題のみ</small>
         </button>
+        <button class="menu-card" onclick="startQuiz('favorite')">
+          <span class="menu-icon">⭐</span>
+          <strong>お気に入り</strong>
+          <small>保存した問題のみ</small>
+        </button>
+        <button class="menu-card" onclick="showSearch()">
+          <span class="menu-icon">🔎</span>
+          <strong>問題検索</strong>
+          <small>キーワードで探す</small>
+        </button>
         <button class="menu-card" onclick="startMockExam()">
           <span class="menu-icon">📝</span>
           <strong>模擬試験</strong>
-          <small>収録問題から最大55問</small>
+          <small>最大55問・100分</small>
         </button>
         <button class="menu-card" onclick="showOfficialExams()">
           <span class="menu-icon">📄</span>
           <strong>公式過去問PDF</strong>
           <small>第53回〜第50回</small>
         </button>
-
       </div>
 
       <section class="notice">
-        <strong>V2.0について</strong>
-        <p>問題データを試験回ごとのJSONファイルに分離しました。今後は新しい試験回のJSONを追加するだけで拡張できます。</p>
+        <strong>V2.1について</strong>
+        <p>お気に入り、問題検索、模試タイマー、分野別成績、更新機能を追加しました。</p>
       </section>
-    </section>
 
+      <button class="text-button danger-text" onclick="resetLearningData()">学習データをリセット</button>
+    </section>
 
     <section id="officialScreen" class="hidden">
       <div class="screen-heading">
         <button class="back-btn" onclick="goHome()">← 戻る</button>
         <h2>公式過去問PDF</h2>
       </div>
-
       <section class="notice official-note">
         <strong>公益財団法人 理容師美容師試験研修センター公開資料</strong>
-        <p>公式サイト上の美容師筆記試験PDFを開きます。正答肢には○印が付いています。</p>
+        <p>公式サイト上の美容師筆記試験PDFを開きます。</p>
       </section>
-
       <div class="official-list">
-        <a class="official-card" href="https://www.rbc.or.jp/wp-content/uploads/2026/03/53bhikki-1.pdf" target="_blank" rel="noopener">
-          <div><strong>第53回 美容師筆記試験</strong><small>2026年公開・公式PDF</small></div><span>開く ↗</span>
-        </a>
-        <a class="official-card" href="https://www.rbc.or.jp/wp-content/uploads/2025/09/52bhikki.pdf" target="_blank" rel="noopener">
-          <div><strong>第52回 美容師筆記試験</strong><small>2025年公開・公式PDF</small></div><span>開く ↗</span>
-        </a>
-        <a class="official-card" href="https://www.rbc.or.jp/wp-content/uploads/2025/03/51bhikki.pdf" target="_blank" rel="noopener">
-          <div><strong>第51回 美容師筆記試験</strong><small>2025年公開・公式PDF</small></div><span>開く ↗</span>
-        </a>
-        <a class="official-card" href="https://www.rbc.or.jp/wp-content/uploads/2024/09/50bhikki.pdf" target="_blank" rel="noopener">
-          <div><strong>第50回 美容師筆記試験</strong><small>2024年公開・公式PDF</small></div><span>開く ↗</span>
-        </a>
+        <a class="official-card" href="https://www.rbc.or.jp/wp-content/uploads/2026/03/53bhikki-1.pdf" target="_blank" rel="noopener"><div><strong>第53回 美容師筆記試験</strong><small>公式PDF</small></div><span>開く ↗</span></a>
+        <a class="official-card" href="https://www.rbc.or.jp/wp-content/uploads/2025/09/52bhikki.pdf" target="_blank" rel="noopener"><div><strong>第52回 美容師筆記試験</strong><small>公式PDF</small></div><span>開く ↗</span></a>
+        <a class="official-card" href="https://www.rbc.or.jp/wp-content/uploads/2025/03/51bhikki.pdf" target="_blank" rel="noopener"><div><strong>第51回 美容師筆記試験</strong><small>公式PDF</small></div><span>開く ↗</span></a>
+        <a class="official-card" href="https://www.rbc.or.jp/wp-content/uploads/2024/09/50bhikki.pdf" target="_blank" rel="noopener"><div><strong>第50回 美容師筆記試験</strong><small>公式PDF</small></div><span>開く ↗</span></a>
       </div>
-
-      <p class="source-note">出典：公益財団法人 理容師美容師試験研修センター「過去の筆記試験問題」</p>
     </section>
 
     <section id="examScreen" class="hidden">
-      <div class="screen-heading">
-        <button class="back-btn" onclick="goHome()">← 戻る</button>
-        <h2>試験回を選ぶ</h2>
-      </div>
+      <div class="screen-heading"><button class="back-btn" onclick="goHome()">← 戻る</button><h2>試験回を選ぶ</h2></div>
       <div id="examList" class="category-list"></div>
     </section>
 
     <section id="categoryScreen" class="hidden">
-      <div class="screen-heading">
-        <button class="back-btn" onclick="goHome()">← 戻る</button>
-        <h2>分野を選ぶ</h2>
-      </div>
+      <div class="screen-heading"><button class="back-btn" onclick="goHome()">← 戻る</button><h2>分野を選ぶ</h2></div>
       <div id="categoryList" class="category-list"></div>
+    </section>
+
+    <section id="searchScreen" class="hidden">
+      <div class="screen-heading"><button class="back-btn" onclick="goHome()">← 戻る</button><h2>問題検索</h2></div>
+      <div class="search-box">
+        <input id="searchInput" type="search" placeholder="例：消毒、毛髪、シャンプー" oninput="renderSearchResults()">
+      </div>
+      <p id="searchSummary" class="search-summary"></p>
+      <div id="searchResults" class="search-results"></div>
     </section>
 
     <section id="quizScreen" class="hidden">
       <div class="quiz-top">
         <button class="back-btn" onclick="quitQuiz()">← 終了</button>
-        <span id="progressText"></span>
+        <div class="quiz-meta">
+          <span id="timerText" class="timer hidden">100:00</span>
+          <span id="progressText"></span>
+        </div>
       </div>
       <div class="progress"><div id="progressBar"></div></div>
+
       <article class="question-card">
-        <span id="categoryBadge" class="category-badge"></span>
+        <div class="question-head">
+          <span id="categoryBadge" class="category-badge"></span>
+          <button id="favoriteButton" class="favorite-btn" onclick="toggleFavorite()" aria-label="お気に入り">☆</button>
+        </div>
+        <p id="questionNumber" class="question-number"></p>
         <h2 id="questionText"></h2>
         <div id="choices" class="choices"></div>
         <div id="resultBox" class="result-box hidden"></div>
@@ -132,10 +160,11 @@
 
     <section id="resultScreen" class="hidden">
       <article class="result-card">
-        <p class="eyebrow">学習結果</p>
-        <h2 id="resultTitle">おつかれさまでした</h2>
+        <p class="eyebrow dark-eyebrow">学習結果</p>
+        <h2>おつかれさまでした</h2>
         <div class="score-circle"><strong id="scoreText"></strong></div>
         <p id="resultMessage"></p>
+        <div id="categoryResults" class="category-results"></div>
         <button class="primary-btn" onclick="goHome()">ホームへ戻る</button>
       </article>
     </section>
