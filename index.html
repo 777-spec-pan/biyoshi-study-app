@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#9b416d">
+  <meta name="theme-color" content="#74334f">
   <title>美容師国家試験 MASTER</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon-192.png">
@@ -15,104 +15,91 @@
     <button onclick="applyUpdate()">更新する</button>
   </div>
 
-  <header class="app-header">
+  <header class="topbar">
     <div>
       <p class="eyebrow">美容師国家試験対策</p>
       <h1 id="appTitle">美容師国家試験 MASTER</h1>
+      <small id="editionText">2027 Edition</small>
     </div>
-    <span id="versionBadge" class="version">V2.1</span>
+    <div class="top-actions">
+      <button id="themeButton" class="icon-button" onclick="toggleTheme()" aria-label="テーマ変更">🌙</button>
+      <span id="versionBadge" class="version">V3.0</span>
+    </div>
   </header>
 
   <main class="container">
     <section id="homeScreen">
-      <div class="hero-card">
-        <div class="hero-line">
+      <section class="dashboard-card">
+        <div class="dashboard-main">
           <div>
-            <p class="hero-copy">毎日少しずつ、合格へ。</p>
-            <small id="questionCountText">収録問題を読み込み中…</small>
+            <span class="label">収録問題</span>
+            <strong id="questionCountNumber">0</strong>
+            <small>問</small>
           </div>
+          <div class="accuracy-ring" id="accuracyRing">
+            <strong id="accuracy">0%</strong>
+            <span>正答率</span>
+          </div>
+        </div>
+
+        <div class="dashboard-grid">
+          <div><span>今日</span><strong id="todayAnswered">0問</strong></div>
+          <div><span>連続学習</span><strong id="streakDays">0日</strong></div>
+          <div><span>累計</span><strong id="totalAnswered">0問</strong></div>
+          <div><span>復習</span><strong id="wrongCount">0問</strong></div>
+        </div>
+
+        <div class="weakness-box">
+          <span>現在の苦手分野</span>
+          <strong id="weakestCategory">まだ学習記録がありません</strong>
+        </div>
+      </section>
+
+      <section class="week-card">
+        <div class="section-title-row">
+          <h2>最近7日間</h2>
           <button class="mini-btn" onclick="checkForUpdate()">更新確認</button>
         </div>
-
-        <div class="stats-grid">
-          <div><strong id="todayAnswered">0</strong><span>今日の回答</span></div>
-          <div><strong id="accuracy">0%</strong><span>正答率</span></div>
-          <div><strong id="streakDays">0日</strong><span>連続学習</span></div>
-        </div>
-
-        <div class="sub-stats">
-          <span>累計 <strong id="totalAnswered">0</strong>問</span>
-          <span>復習 <strong id="wrongCount">0</strong>問</span>
-          <span>お気に入り <strong id="favoriteCount">0</strong>問</span>
-        </div>
-      </div>
+        <div id="weekChart" class="week-chart"></div>
+      </section>
 
       <h2>学習メニュー</h2>
       <div class="menu-grid">
-        <button class="menu-card" onclick="startQuiz('random')">
-          <span class="menu-icon">✂️</span>
-          <strong>ランダム10問</strong>
-          <small>全分野から出題</small>
-        </button>
-        <button class="menu-card" onclick="showCategories()">
-          <span class="menu-icon">📚</span>
-          <strong>分野別学習</strong>
-          <small>苦手分野を集中</small>
-        </button>
-        <button class="menu-card" onclick="showExams()">
-          <span class="menu-icon">📖</span>
-          <strong>年度別学習</strong>
-          <small>試験回を選んで学習</small>
-        </button>
-        <button class="menu-card" onclick="startQuiz('wrong')">
-          <span class="menu-icon">🔁</span>
-          <strong>間違い復習</strong>
-          <small>間違えた問題のみ</small>
-        </button>
-        <button class="menu-card" onclick="startQuiz('favorite')">
-          <span class="menu-icon">⭐</span>
-          <strong>お気に入り</strong>
-          <small>保存した問題のみ</small>
-        </button>
-        <button class="menu-card" onclick="showSearch()">
-          <span class="menu-icon">🔎</span>
-          <strong>問題検索</strong>
-          <small>キーワードで探す</small>
-        </button>
-        <button class="menu-card" onclick="startMockExam()">
+        <button class="menu-card primary-menu" onclick="startMockExam()">
           <span class="menu-icon">📝</span>
-          <strong>模擬試験</strong>
+          <strong>本番模試</strong>
           <small>最大55問・100分</small>
         </button>
-        <button class="menu-card" onclick="showOfficialExams()">
-          <span class="menu-icon">📄</span>
-          <strong>公式過去問PDF</strong>
-          <small>第53回〜第50回</small>
-        </button>
+        <button class="menu-card" onclick="startQuiz('random')"><span class="menu-icon">✂️</span><strong>ランダム</strong><small>10問出題</small></button>
+        <button class="menu-card" onclick="showExams()"><span class="menu-icon">📖</span><strong>年度別</strong><small>試験回を選択</small></button>
+        <button class="menu-card" onclick="showCategories()"><span class="menu-icon">📚</span><strong>科目別</strong><small>苦手を集中</small></button>
+        <button class="menu-card" onclick="startQuiz('wrong')"><span class="menu-icon">🔁</span><strong>苦手克服</strong><small>間違い問題</small></button>
+        <button class="menu-card" onclick="startQuiz('favorite')"><span class="menu-icon">⭐</span><strong>お気に入り</strong><small id="favoriteMenuCount">0問保存</small></button>
+        <button class="menu-card" onclick="showSearch()"><span class="menu-icon">🔎</span><strong>問題検索</strong><small>キーワード検索</small></button>
+        <button class="menu-card" onclick="showAnalysis()"><span class="menu-icon">📊</span><strong>学習分析</strong><small>科目別成績</small></button>
+        <button class="menu-card" onclick="showOfficialExams()"><span class="menu-icon">📄</span><strong>公式過去問</strong><small>第53回〜第50回</small></button>
       </div>
 
       <section class="notice">
-        <strong>V2.1について</strong>
-        <p>お気に入り、問題検索、模試タイマー、分野別成績、更新機能を追加しました。</p>
+        <strong>V3.0</strong>
+        <p>ホーム画面、学習分析、7日間記録、苦手分野表示、ダークモードを追加しました。</p>
       </section>
-
       <button class="text-button danger-text" onclick="resetLearningData()">学習データをリセット</button>
     </section>
 
+    <section id="analysisScreen" class="hidden">
+      <div class="screen-heading"><button class="back-btn" onclick="goHome()">← 戻る</button><h2>学習分析</h2></div>
+      <div id="analysisSummary" class="analysis-summary"></div>
+      <div id="analysisList" class="analysis-list"></div>
+    </section>
+
     <section id="officialScreen" class="hidden">
-      <div class="screen-heading">
-        <button class="back-btn" onclick="goHome()">← 戻る</button>
-        <h2>公式過去問PDF</h2>
-      </div>
-      <section class="notice official-note">
-        <strong>公益財団法人 理容師美容師試験研修センター公開資料</strong>
-        <p>公式サイト上の美容師筆記試験PDFを開きます。</p>
-      </section>
+      <div class="screen-heading"><button class="back-btn" onclick="goHome()">← 戻る</button><h2>公式過去問PDF</h2></div>
       <div class="official-list">
-        <a class="official-card" href="https://www.rbc.or.jp/wp-content/uploads/2026/03/53bhikki-1.pdf" target="_blank" rel="noopener"><div><strong>第53回 美容師筆記試験</strong><small>公式PDF</small></div><span>開く ↗</span></a>
-        <a class="official-card" href="https://www.rbc.or.jp/wp-content/uploads/2025/09/52bhikki.pdf" target="_blank" rel="noopener"><div><strong>第52回 美容師筆記試験</strong><small>公式PDF</small></div><span>開く ↗</span></a>
-        <a class="official-card" href="https://www.rbc.or.jp/wp-content/uploads/2025/03/51bhikki.pdf" target="_blank" rel="noopener"><div><strong>第51回 美容師筆記試験</strong><small>公式PDF</small></div><span>開く ↗</span></a>
-        <a class="official-card" href="https://www.rbc.or.jp/wp-content/uploads/2024/09/50bhikki.pdf" target="_blank" rel="noopener"><div><strong>第50回 美容師筆記試験</strong><small>公式PDF</small></div><span>開く ↗</span></a>
+        <a class="official-card" href="https://www.rbc.or.jp/wp-content/uploads/2026/03/53bhikki-1.pdf" target="_blank" rel="noopener"><div><strong>第53回</strong><small>美容師筆記試験</small></div><span>開く ↗</span></a>
+        <a class="official-card" href="https://www.rbc.or.jp/wp-content/uploads/2025/09/52bhikki.pdf" target="_blank" rel="noopener"><div><strong>第52回</strong><small>美容師筆記試験</small></div><span>開く ↗</span></a>
+        <a class="official-card" href="https://www.rbc.or.jp/wp-content/uploads/2025/03/51bhikki.pdf" target="_blank" rel="noopener"><div><strong>第51回</strong><small>美容師筆記試験</small></div><span>開く ↗</span></a>
+        <a class="official-card" href="https://www.rbc.or.jp/wp-content/uploads/2024/09/50bhikki.pdf" target="_blank" rel="noopener"><div><strong>第50回</strong><small>美容師筆記試験</small></div><span>開く ↗</span></a>
       </div>
     </section>
 
@@ -122,15 +109,13 @@
     </section>
 
     <section id="categoryScreen" class="hidden">
-      <div class="screen-heading"><button class="back-btn" onclick="goHome()">← 戻る</button><h2>分野を選ぶ</h2></div>
+      <div class="screen-heading"><button class="back-btn" onclick="goHome()">← 戻る</button><h2>科目を選ぶ</h2></div>
       <div id="categoryList" class="category-list"></div>
     </section>
 
     <section id="searchScreen" class="hidden">
       <div class="screen-heading"><button class="back-btn" onclick="goHome()">← 戻る</button><h2>問題検索</h2></div>
-      <div class="search-box">
-        <input id="searchInput" type="search" placeholder="例：消毒、毛髪、シャンプー" oninput="renderSearchResults()">
-      </div>
+      <div class="search-box"><input id="searchInput" type="search" placeholder="例：消毒、毛髪、シャンプー" oninput="renderSearchResults()"></div>
       <p id="searchSummary" class="search-summary"></p>
       <div id="searchResults" class="search-results"></div>
     </section>
@@ -138,18 +123,11 @@
     <section id="quizScreen" class="hidden">
       <div class="quiz-top">
         <button class="back-btn" onclick="quitQuiz()">← 終了</button>
-        <div class="quiz-meta">
-          <span id="timerText" class="timer hidden">100:00</span>
-          <span id="progressText"></span>
-        </div>
+        <div class="quiz-meta"><span id="timerText" class="timer hidden">100:00</span><span id="progressText"></span></div>
       </div>
       <div class="progress"><div id="progressBar"></div></div>
-
       <article class="question-card">
-        <div class="question-head">
-          <span id="categoryBadge" class="category-badge"></span>
-          <button id="favoriteButton" class="favorite-btn" onclick="toggleFavorite()" aria-label="お気に入り">☆</button>
-        </div>
+        <div class="question-head"><span id="categoryBadge" class="category-badge"></span><button id="favoriteButton" class="favorite-btn" onclick="toggleFavorite()">☆</button></div>
         <p id="questionNumber" class="question-number"></p>
         <h2 id="questionText"></h2>
         <div id="choices" class="choices"></div>

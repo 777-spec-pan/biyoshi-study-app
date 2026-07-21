@@ -69,7 +69,7 @@ function calcStreak(dates) {
 }
 
 function showOnly(id) {
-  ["homeScreen","officialScreen","examScreen","categoryScreen","searchScreen","quizScreen","resultScreen"].forEach(screenId => {
+  ["homeScreen","analysisScreen","officialScreen","examScreen","categoryScreen","searchScreen","quizScreen","resultScreen"].forEach(screenId => {
     document.getElementById(screenId).classList.toggle("hidden", screenId !== id);
   });
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -78,14 +78,83 @@ function showOnly(id) {
 function updateHomeStats() {
   const stats = getStats();
   const today = dateKey();
-  document.getElementById("todayAnswered").textContent = stats.daily[today] || 0;
-  document.getElementById("totalAnswered").textContent = stats.answered;
-  document.getElementById("accuracy").textContent =
-    stats.answered ? `${Math.round(stats.correct / stats.answered * 100)}%` : "0%";
-  document.getElementById("wrongCount").textContent = stats.wrongIds.length;
-  document.getElementById("favoriteCount").textContent = stats.favoriteIds.length;
+  const accuracy = stats.answered ? Math.round(stats.correct / stats.answered * 100) : 0;
+
+  document.getElementById("todayAnswered").textContent = `${stats.daily[today] || 0}問`;
+  document.getElementById("totalAnswered").textContent = `${stats.answered}問`;
+  document.getElementById("accuracy").textContent = `${accuracy}%`;
+  document.getElementById("wrongCount").textContent = `${stats.wrongIds.length}問`;
   document.getElementById("streakDays").textContent = `${calcStreak(stats.studyDates)}日`;
-  document.getElementById("questionCountText").textContent = `収録問題 ${QUESTIONS.length}問`;
+  document.getElementById("questionCountNumber").textContent = QUESTIONS.length;
+  document.getElementById("favoriteMenuCount").textContent = `${stats.favoriteIds.length}問保存`;
+
+  const ring = document.getElementById("accuracyRing");
+  if (ring) ring.style.setProperty("--accuracy", `${accuracy * 3.6}deg`);
+
+  const weakest = getWeakestCategory(stats);
+  document.getElementById("weakestCategory").textContent = weakest;
+  renderWeekChart(stats);
+}
+
+
+function getWeakestCategory(stats) {
+  const entries = Object.entries(stats.categoryStats || {})
+    .filter(([,v]) => v.answered > 0)
+    .map(([name,v]) => ({name, rate: Math.round(v.correct / v.answered * 100), answered:v.answered}))
+    .sort((a,b) => a.rate - b.rate || b.answered - a.answered);
+  return entries.length ? `${entries[0].name}（${entries[0].rate}%）` : "まだ学習記録がありません";
+}
+
+function renderWeekChart(stats) {
+  const chart = document.getElementById("weekChart");
+  if (!chart) return;
+  chart.innerHTML = "";
+  const days = [];
+  for (let i = 6; i >= 0; i--) {
+    const d = new Date();
+    d.setDate(d.getDate() - i);
+    days.push({ key: dateKey(d), label: `${d.getMonth()+1}/${d.getDate()}` });
+  }
+  const max = Math.max(1, ...days.map(d => stats.daily[d.key] || 0));
+  days.forEach(day => {
+    const count = stats.daily[day.key] || 0;
+    const item = document.createElement("div");
+    item.className = "week-item";
+    item.innerHTML = `<span class="week-value">${count}</span><div class="week-bar"><i style="height:${Math.max(4, count/max*100)}%"></i></div><small>${day.label}</small>`;
+    chart.appendChild(item);
+  });
+}
+
+function showAnalysis() {
+  const stats = getStats();
+  const summary = document.getElementById("analysisSummary");
+  const list = document.getElementById("analysisList");
+  const overall = stats.answered ? Math.round(stats.correct / stats.answered * 100) : 0;
+  summary.innerHTML = `<div><span>総回答数</span><strong>${stats.answered}問</strong></div><div><span>総正答率</span><strong>${overall}%</strong></div>`;
+
+  list.innerHTML = "";
+  APP_CONFIG.categories.forEach(category => {
+    const item = stats.categoryStats[category] || {answered:0, correct:0};
+    const rate = item.answered ? Math.round(item.correct / item.answered * 100) : 0;
+    const row = document.createElement("article");
+    row.className = "analysis-row";
+    row.innerHTML = `<div><strong>${escapeHtml(category)}</strong><small>${item.correct}/${item.answered}問</small></div><div class="analysis-progress"><i style="width:${rate}%"></i></div><b>${rate}%</b>`;
+    list.appendChild(row);
+  });
+  showOnly("analysisScreen");
+}
+
+function toggleTheme() {
+  const dark = document.documentElement.classList.toggle("dark");
+  localStorage.setItem("biyoshiTheme", dark ? "dark" : "light");
+  document.getElementById("themeButton").textContent = dark ? "☀️" : "🌙";
+}
+
+function applySavedTheme() {
+  const dark = localStorage.getItem("biyoshiTheme") === "dark";
+  document.documentElement.classList.toggle("dark", dark);
+  const btn = document.getElementById("themeButton");
+  if (btn) btn.textContent = dark ? "☀️" : "🌙";
 }
 
 function goHome() {
@@ -473,6 +542,8 @@ function initializeApp() {
 
   document.getElementById("appTitle").textContent = APP_CONFIG.appName;
   document.getElementById("versionBadge").textContent = APP_CONFIG.version;
+  document.getElementById("editionText").textContent = APP_CONFIG.edition || "";
+  applySavedTheme();
   updateHomeStats();
   registerServiceWorker();
 }

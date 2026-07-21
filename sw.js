@@ -1,4 +1,4 @@
-const CACHE_NAME = "biyoshi-master-v2-1";
+const CACHE_NAME = "biyoshi-master-v3-0";
 const ASSETS = [
   "./",
   "./index.html",

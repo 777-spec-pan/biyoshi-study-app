@@ -1,10 +1,10 @@
 {
-  "name": "美容師国家試験 MASTER",
+  "name": "美容師国家試験 MASTER 2027",
   "short_name": "美容師MASTER",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f7f3f5",
-  "theme_color": "#9b416d",
+  "theme_color": "#74334f",
   "description": "美容師国家試験の学習用PWA",
   "icons": [
     {
