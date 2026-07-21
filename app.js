@@ -19,7 +19,7 @@ function shuffle(array) {
   return [...array].sort(() => Math.random() - 0.5);
 }
 function showOnly(id) {
-  ["homeScreen","examScreen","categoryScreen","quizScreen","resultScreen"].forEach(x => {
+  ["homeScreen","officialScreen","examScreen","categoryScreen","quizScreen","resultScreen"].forEach(x => {
     document.getElementById(x).classList.toggle("hidden", x !== id);
   });
 }
@@ -42,6 +42,9 @@ function updateHomeStats() {
 function goHome() {
   showOnly("homeScreen");
   updateHomeStats();
+}
+function showOfficialExams() {
+  showOnly("officialScreen");
 }
 function showExams() {
   const list = document.getElementById("examList");
