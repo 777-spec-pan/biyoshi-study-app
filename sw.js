@@ -1,5 +1,10 @@
-const CACHE_NAME = "biyoshi-master-v1-2";
+const CACHE_NAME = "biyoshi-master-v2-0";
 const ASSETS = [
+  "./data/50.json",
+  "./data/51.json",
+  "./data/52.json",
+  "./data/53.json",
+  "./data-loader.js",
   "./",
   "index.html",
   "style.css",

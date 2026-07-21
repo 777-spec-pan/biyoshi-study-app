@@ -1,6 +1,6 @@
 const APP_CONFIG = {
   appName: "美容師国家試験 MASTER",
-  version: "V1.2",
+  version: "V2.0",
   randomQuestionCount: 10,
   mockQuestionCount: 55,
   passingRate: 60,

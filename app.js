@@ -179,3 +179,25 @@ updateHomeStats();
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => navigator.serviceWorker.register("sw.js"));
 }
+
+
+function initializeApp() {
+  if (document.body.dataset.initialized) return;
+  document.body.dataset.initialized = "true";
+  document.getElementById("appTitle").textContent = APP_CONFIG.appName;
+  document.getElementById("versionBadge").textContent = APP_CONFIG.version;
+  updateHomeStats();
+
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js").catch(console.error);
+  }
+}
+
+window.addEventListener("questionDatabaseReady", initializeApp, { once: true });
+
+setTimeout(() => {
+  if (!document.body.dataset.initialized) {
+    initializeApp();
+    document.body.dataset.initialized = "true";
+  }
+}, 1500);
